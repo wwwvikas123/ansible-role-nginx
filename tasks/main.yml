@@ -18,13 +18,13 @@
 
     - name: Install Nginx container
       docker_container:
-        name: web_nginx
+        name: "{{ nginx_container_name}}"
         state: started
         image: nginx:alpine
         pull: true
         recreate: yes
         ports:
-         - 10002:80
+         - "{{ nginx_exposed_port }}:80"
         networks:
           - name: "{{ docker_network_name }}"
         volumes:
