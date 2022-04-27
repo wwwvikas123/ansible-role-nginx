@@ -1,7 +1,7 @@
     upstream web {
-        server web_1:{{ port_1 }};
-        server web_2:{{ port_2 }};
-        server web_3:{{ port_3 }};
+        server {{ service_1 }}:{{ port_1 }};
+        server {{ service_2 }}:{{ port_2 }};
+        server {{ service_3 }}:{{ port_3 }};
     }
 
     server {
